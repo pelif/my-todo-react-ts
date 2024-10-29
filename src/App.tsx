@@ -27,8 +27,7 @@ function App() {
     setIsModalOpen(true);
   }
 
-  const closeModal = (): void => {
-    console.log("It is Here ... !!!");
+  const closeModal = (): void => {    
     setIsModalOpen(false);
   }
 
@@ -52,7 +51,6 @@ function App() {
 
   return (
     <div>
-
       <Modal isOpen={isModalOpen} closeModal={closeModal}>
         <TaskForm
           btnText="Adicionar Tarefa"
@@ -68,7 +66,7 @@ function App() {
         <div>
           <h2>O que você vai fazer?</h2>
           <TaskForm
-            btnText="Adicionar Tarefa"
+            btnText={isModalOpen ? "Editar Tarefa" : "Adicionar Tarefa"}
             taskList={taskList}
             setTaskList={setTaskList} 
             />
